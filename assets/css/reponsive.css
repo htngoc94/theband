@@ -1,0 +1,53 @@
+
+/*table*/
+@media(min-width: 740px) and (max-width: 1023px){
+    
+}
+
+/*mobile*/
+@media (max-width:739px){
+    #header{
+        height: auto;
+    }
+    #header .pc-search{
+        display: none;
+    }
+    #header .mobile-menu{
+        display: block;
+    }
+    #header .mobile-menu:hover{
+        background-color: #ccc;
+    }
+    #header .mobile-menu:hover i{
+        color: #000;
+    }
+    
+    ul#nav > li{
+        display: none;
+    }
+    ul#nav > li:first-child{
+        display: inline-block;
+    }
+    
+    #header ul.subnav{
+        position: inherit;
+    }
+
+    ul.subnav > li > a{
+        color: #fff;
+        background-color: #333;
+        padding-left: 40px !important;
+    }
+    #slider .text-content{
+        display: none;
+    }
+    .col-12{
+        width: 100%;
+    }
+    
+    
+    #band .member-img{
+        width: 60%;
+    }
+    
+}

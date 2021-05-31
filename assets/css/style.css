@@ -1,0 +1,376 @@
+/*Reset css*/
+*{
+    /* Emmet*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/*common (dung chung)*/
+.text-white{
+    color: #fff !important;
+}
+.text-center{
+    text-align: center !important;
+}
+
+.btn{
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover{
+    color: #000;
+    background-color: #ccc;
+}
+
+.margin-t-8{
+    margin-top: 8px !important;
+}
+.margin-t-16{
+    margin-top: 16px !important;
+}
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.col-1{
+    width: 100%;
+}
+.col-2{
+    width: 50%;
+}
+.col-3{
+    width: 33.3333%;
+/*    width: calc(100%/3);*/
+}
+
+#main{}
+
+#header{
+    height: 46px;
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+/*Menu*/
+ul#nav > li{
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    z-index: 100;
+}
+ul#nav > li a{
+    text-decoration: none;
+    display: block;
+    padding: 0 24px;
+}
+ul#nav > li > a{
+    line-height: 46px;
+    color: #fff;
+    text-transform: uppercase;
+}
+#nav > li:hover{
+    background-color: #ccc;
+}
+#nav > li:hover > a{
+    color: #000;
+    display: block;
+    transition: ease 0.5s;
+}
+
+ul.subnav{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    min-width: 160px;
+}
+
+ul.subnav > li{
+    list-style: none;
+    background-color: #fff;
+    display: none;
+}
+ul.subnav > li > a{
+    color: black;
+    line-height: 38px;
+}
+
+ul.subnav > li:hover a{
+    background-color: #ccc;
+    color: #fff;
+    transition: ease 0.5s;
+}
+
+#nav > li:hover ul.subnav > li{
+    display: block;
+}
+/*menu finish*/
+.search-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    line-height: 46px;
+    text-align: center;
+}
+.search-btn .search-icon{
+    color: white;
+    font-size: 20px;
+}
+.search-btn:hover{
+    background-color: red;
+}
+.mobile-menu{
+    display: none;
+}
+/*slide bar
+    padding-top: 50%; chinh la 50% chieu rong cua chinh no
+*/
+#slider{
+    
+    /* background: url(/assets/img/slider/slider1.jpg) top center / cover no-repeat;*/
+/*
+    background: url(/assets/img/slider/slider1.jpg);
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+*/
+    padding-top: 50%; 
+    position: relative;
+    margin-top: 46px;
+}
+#slider .slider-img{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+#slider .slider-img img{
+    width: 100%;
+}
+
+#slider .text-content{
+    position: absolute;
+    bottom: 47px;
+    color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+#slider .text-heading{
+    font-weight: 500;
+    font-size: 24px;
+}
+#slider .text-description{
+    font-size: 15px;
+    margin-top: 25px;
+}
+#slider .slider-img:not(:first-child){
+    display: none;
+}
+
+
+/*content*/
+#content{
+    min-height: 600px;
+}
+
+#content .content-section{
+    width: 800px;
+    max-width: 100%;
+    margin: 0px auto;
+    padding: 64px 16px 112px 16px;
+}
+#content .section-heading{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+#content .section-heading__sub{
+    font-size: 15px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 25px;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+#content .about-content{
+    margin-top: 25px;
+    font-size: 15px;
+    text-align: justify;
+    line-height: 1.5;
+}
+#content .member-list{
+    margin-top: 48px;
+}
+
+#content .member-name{
+    margin-top: 24px;
+    font-size: 15px;
+}
+
+#content .member-img{
+    margin-top: 15px;
+    border-radius: 4px;
+    width: 153px;
+}
+.tour-selection{
+    background-color: #333;
+}
+.tour-selection .tickest-list{
+    background-color: white;
+    margin-top: 40px;
+}
+.tickest-list li{
+    list-style: none;
+    color: #757575;
+    font-size: 15px;
+    padding: 11px 16px;;
+    border-bottom: 1px solid #ddd;
+}
+.tickest-list .sold-out{
+    background-color: #f44336;
+    color: #fff;
+    padding: 3px 4px;
+    margin-left: 16px;
+    
+}
+.tickest-list .quantity{
+    background-color: black;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    float: right;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    margin-top: -3px;
+}
+/*place*/
+.place-list{
+    margin-top: 32px;
+    margin-bottom: 48px;
+}
+
+.place-list .place-img{
+    width: 100%;
+    display: block;
+}
+.place-img:hover{
+    opacity: 0.6;
+    transition: ease 0.5s;
+}
+.place-list .place-content{
+    background-color: #fff;
+    padding: 16px;
+    font-size: 15px;
+}
+.place-content .place-heading{
+    font-size: 15px;
+}
+.place-content .place-time{
+    margin-top: 15px;   
+    color: #757575;
+}
+.place-content .place-description{
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+/*contact form*/
+.contact-content{
+    margin-top: 48px;
+}
+.contact-content i[class*="fa-"]{
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-info{
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.contact-form{
+    font-size: 15px;
+}
+.contact-form .form-control{
+    padding:10px;
+    border:1px solid #ccc;
+    width: 100%;
+}
+.div-send-btn{
+    text-align: right;
+}
+
+
+.map-section img{
+    width: 100%;
+    display: block;
+}
+
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+}
+#footer .socials-list{
+    font-size: 24px;
+}
+#footer .socials-list i{
+    padding: 0 5px;
+}
+#footer .socials-list a{
+    text-decoration: none;
+    color: #333;
+}
+#footer .socials-list a:hover{
+    opacity: 0.5;
+}
+
+#footer .copyright{
+    margin-top: 15px;
+    color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>w3 Band</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-3.5.1.min.js"></script>
+    <link rel=icon href="./assets/img/favi_icon/faviicon.png" sizes="16x16" type="image/png">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
+    <style>
+        @font-face{
+            font-family: "Roboto";
+            src: url('./assets/fonts/font-google/Roboto/Roboto-Regular.ttf');
+        }
+    </style>
+    <script>
+         $(document).ready(function(){
+            
+            var stt = 0;
+            var endImg = $("img.slider-img__items:last").attr("idx");
+            //auto change silde
+            setInterval(function(){
+                if (++stt > endImg){
+                    stt = 0;
+                }
+                $(".slider-img").hide();
+                $(".slider-img").eq(stt).show();
+                
+            },4000);
+            
+            $('.mobile-menu').on("click", function(){
+                var flag = $('#mb_flag').val();
+                if(flag == 'close'){
+                    $("#nav > li").css("display","block");
+                    $("#nav > li").eq(0).css("display", "inline-block");
+                    $('#mb_flag').val("open");
+                }
+                else{
+                    $("#nav > li").css("display","none");
+                    $("#nav > li").eq(0).css("display", "inline-block");
+                    $('#mb_flag').val("close");
+                }
+                return false;
+            });
+            
+            $('#nav li a').on("click", function(){
+                var count = $(this).next("ul.subnav").length;
+                console.log(count);
+                if (count == 0){
+                    $("#nav > li").css("display","none");
+                    $("#nav > li").eq(0).css("display", "inline-block");
+                    $('#mb_flag').val("close");
+                }
+            });
+        });
+    </script>
+        
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <!-- menu: begin-->
+            <ul id="nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#band">Band</a></li>
+                <li><a href="#tour">Tour</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#">
+                        More
+                        <i class="fa fa-chevron-down"></i>
+                    </a>
+                    <ul class="subnav">
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- menu: end-->
+            
+            <!-- Search: begin -->
+            <div class="search-btn pc-search">
+                <i class="fa fa-search search-icon"></i>
+            </div>
+            <!-- mobile menu-->
+            <div class="search-btn mobile-menu">
+                <i class="fa fa-bars search-icon"></i>
+                <input id="mb_flag" type="hidden" value="close">
+            </div>
+        </div>
+        
+        <div id="slider">
+            <div class="slider-img">
+                <img src="./assets/img/slider/slider1.jpg" alt="img1" idx="0" class="slider-img__items">
+                <div class="text-content">
+                    <h2 class="text-heading">Chicago</h2>
+                    <div class="text-description">TThank you, Chicago - A night we won't forget.</div>
+                </div>
+            </div>
+            
+            <div class="slider-img">
+                <img src="./assets/img/slider/slider2.jpg" alt="img2" idx="1" class="slider-img__items">
+                <div class="text-content">
+                    <h2 class="text-heading">New York</h2>
+                    <div class="text-description">The atmosphere in New York is lorem ipsum.</div>
+                </div>
+            </div>
+            
+            <div class="slider-img">
+                <img src="./assets/img/slider/slider3.jpg" alt="img3" idx="2" class="slider-img__items">
+                <div class="text-content">
+                    <h2 class="text-heading">Los Angeles</h2>
+                    <div class="text-description">We had the best time playing at Venice Beach!</div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div id="content">
+            <!--    The band-->
+            <div id="band" class="content-section">
+                <h2 class="section-heading">THE BAND</h2>
+                <p class="section-heading__sub">Music of live</p>
+                <p class="about-content">
+                    We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                
+                <div class="row member-list">
+                    <div class="col col-3 col-12 text-center">
+                        <p class="member-name">Name</p>
+                        <img src="./assets/img/band/bandmember1.jpg" alt="member-img" class="member-img">
+                    </div>
+                    
+                    <div class="col col-3 col-12 text-center">
+                        <p class="member-name">Name</p>
+                        <img src="./assets/img/band/bandmember1.jpg" alt="member-img" class="member-img">
+                    </div>
+                    
+                    <div class="col col-3 col-12 text-center">
+                        <p class="member-name">Name</p>
+                        <img src="./assets/img/band/bandmember1.jpg" alt="member-img" class="member-img">
+                    </div>
+                </div>
+            </div>
+            
+            <!--    Tour dates-->
+            <div id="tour" class="tour-selection">
+                <div class="content-section">
+                    <h2 class="section-heading text-white">TOUR DATES</h2>
+                    <p class="section-heading__sub text-white">Remember to book your tickets!</p>
+                    
+                    <div class="tickest-list">
+                        <ul>
+                            <li>September <span class="sold-out">Sold out</span></li>
+                            <li>October <span class="sold-out">Sold out</span></li>
+                            <li>November <span class="quantity">3</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!--  place-->
+                    <div class="row place-list">
+                        <div class="col col-3 col-12 margin-t-16">
+                            <img src="./assets/img/place/place1.jpg" alt="NewYork" class="place-img">
+                            <div class="place-content">
+                                <h3 class="place-heading">New York</h3>
+                                <p class="place-time">Fri 27 Nov 2016</p>
+                                <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <a href="#" class="btn">By Tickets</a>
+                            </div>
+                        </div>
+                        
+                        <div class="col col-3 col-12 margin-t-16">
+                            <img src="./assets/img/place/place2.jpg" alt="NewYork" class="place-img">
+                            <div class="place-content">
+                                <h3 class="place-heading">New York</h3>
+                                <p class="place-time">Sat 28 Nov 2016</p>
+                                <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <a href="#" class="btn">By Tickets</a>
+                            </div>
+                        </div>
+                        
+                        <div class="col col-3 col-12 margin-t-16">
+                            <img src="./assets/img/place/place3.jpg" alt="NewYork" class="place-img">
+                            <div class="place-content">
+                                <h3 class="place-heading">New York</h3>
+                                <p class="place-time">Sun 29 Nov 2016</p>
+                                <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <a href="#" class="btn">By Tickets</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!--    Contact Begin-->
+            <div id="contact" class="content-section">
+                <h2 class="section-heading">CONTACT</h2>
+                <p class="section-heading__sub">Fan? Drop a note!</p>
+                
+                <div class="row contact-content">
+                    <div class="col col-2 col-12 contact-info">
+                        <p><i class="fa fa-map-marker"></i>Chicago, US</p>
+                        <p><i class="fa fa-phone"></i>Phone: +00 151515</p>
+                        <p><i class="fa fa-envelope"></i>Email: htngoc@gmail.com</p>
+                    </div>
+                    <div class="col col-2 col-12 contact-form">
+                        <form action="">
+                            <div class="row margin-t-8">
+                                <div class="col col-2 col-12">
+                                    <input type="text" name="Name" required placeholder="Name" id="" class="form-control">
+                                </div>
+                                
+                                <div class="col col-2 col-12">
+                                    <input type="email" name="Email" required placeholder="Email" id="" class="form-control">
+                                </div>
+                            </div>
+                            
+                            <div class="row margin-t-8">
+                                <div class="col col-1">
+                                    <input type="text" name="Message" required placeholder="Message" id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="margin-t-8 div-send-btn">
+                                <input type="submit" value="SEND" class="btn">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> 
+            <!-- contact end-->
+            
+            <!--   map-->
+            <div class="map-section">
+                <img src="./assets/img/map/map.jpg" alt="map">
+            </div>
+            <!--   map end-->
+        </div>
+        
+        <div id="footer">
+            <div class="socials-list">
+                <a href="#"><i class="fa fa-facebook-square"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-snapchat"></i></a>
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <p class="copyright">Powered by htngoc</p>
+        </div>
+    </div>
+</body>
+</html>

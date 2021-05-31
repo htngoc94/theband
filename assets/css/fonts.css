@@ -1,0 +1,5 @@
+/*day la style cua font goole*/
+@font-face{
+    font-family: "Roboto";
+    src: url('./assets/fonts/font-google/Roboto/Roboto-Regular.ttf');
+}
